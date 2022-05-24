@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.bundle.js"></script>
+    <title>Mecke_Dev</title>
+</head>
+<body class="bg-dark">
+    
+    <div class="container">
+
+        <div class="header  bg-light mt-3 rounded text-center">
+            <h1>Welcome to the Docs of Mecke_Bot</h1>
+            <p>This Page is still under development and looks pretty ugly at the Moment, sorry for that.</p>
+        </div>
+
+        <div class="commands bg-light rounded p-3 mt-3">
+            
+            <div class="text-center"><h4>User Commands</h4></div>
+            <table class="col-12 table table-dark table-striped">
+                <th class="col-1">Command</th>
+                <th class="col-2">Parameters</th>
+                <th class="col-3">Example</th>
+                <th class="col-6">Description</th>
+                <tr>
+                    <td> $commands </td>
+                    <td> None </td>
+                    <td> $commands </td>
+                    <td> Returns a list of all Custom-Commands on the Channel <br> Output: $discord, $test, $insta </td>
+                </tr>
+
+                <tr>
+                    <td> $roll_ds </td>
+                    <td> weight </td>
+                    <td> $roll_ds 25.5 </td>
+                    <td> Returns the Weightlimits for different Rolls in Dark Souls 1 <br> Output: Fast: 6.38 | Mid: 12.75 | Fat: 25.50  </td>
+                </tr>
+                
+                <tr>
+                    <td> $memeroll </td>
+                    <td> weight </td>
+                    <td> $memeroll 25.5 </td>
+                    <td> Returns the Range of Weight you need for a Speedrun-Trick in Dark Souls 1 <br> Output: Meme-Roll/Air-Roll: between 6.38 - 7.42   </td>
+                </tr>
+                
+                <tr>
+                    <td> $rps </td>
+                    <td> rock, paper, scissors </td>
+                    <td> $rps paper </td>
+                    <td> Play Rock Paper Scissors against the Bot <br> Output: That's a Draw, the Bot also picked Paper    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="commands bg-light rounded p-3 mt-3">
+            
+            <div class="text-center"><h4>Streamer/Mod-Only Commands </h4> <br> <p> Custom-Commands can include <a href="#keywords">-KEYWORDS-</a> like described down below </p></div>
+            <table class="col-12 table table-dark table-striped">
+                <th class="col-1">Command</th>
+                <th class="col-2">Parameters</th>
+                <th class="col-3">Example</th>
+                <th class="col-6">Description</th>
+                <tr>
+                    <td> $addcom </td>
+                    <td> commandname, value </td>
+                    <td> $addcom test This is a test </td>
+                    <td> creates a Command with the given commandname and outputs the Value <br> Output: "This is a test" was saved as $test.  </td>
+                </tr>
+
+                <tr>
+                    <td> $add_counter </td>
+                    <td> countername, value </td>
+                    <td> $add_counter test This test was done <br>-COUNT- times.</td>
+                    <td> creates a Counter with the given commandname and outputs the Value <br> Output: "This is a test" was saved as $test.  </td>
+                </tr>
+
+                <tr>
+                    <td> $mod_counter </td>
+                    <td> countername, value </td>
+                    <td> $mod_counter test This test was done <br>-COUNT- times.</td>
+                    <td> creates a Mod-Only Counter with the given commandname and outputs the Value <br> (Can be called by Everyone, but can only be changed by Mods) <br> Output: "This is a test" was saved as $test.  </td>
+                </tr>
+
+                <tr>
+                    <td> $subcom </td>
+                    <td> commandname, value </td>
+                    <td> $subcom test This is a test </td>
+                    <td> creates a Sub-Only Command with the given commandname and outputs the Value <br> Output: "This is a test" was saved as $test (only Subs).  </td>
+                </tr>
+
+                <tr>
+                    <td> $modcom </td>
+                    <td> commandname, value </td>
+                    <td> $modcom test This is a test </td>
+                    <td> creates a Mod-Only Command with the given commandname and outputs the Value <br> Output: "This is a test" was saved as $test (only Mods).  </td>
+                </tr>
+
+                <tr>
+                    <td> $remcom </td>
+                    <td> commandname </td>
+                    <td> $remcom test </td>
+                    <td> removes an existing Command with the given commandname <br> Output: $test was removed.  </td>
+                </tr>
+                
+            </table>
+
+        </div>
+
+        <div class="commands bg-light rounded p-3 mt-3">
+            
+            <div class="text-center"><h4>Mecke-Only Commands</h4></div>
+            <table class="col-12 table table-dark table-striped">
+                <th class="col-1">Command</th>
+                <th class="col-2">Parameters</th>
+                <th class="col-3">Example</th>
+                <th class="col-6">Description</th>
+                <tr>
+                    <td> $run </td>
+                    <td> oneline Python </td>
+                    <td> $run [x for x in range(5)] </td>
+                    <td> Runs Python Code and returns Result <br> Output: [0, 1, 2, 3, 4] </td>
+                </tr>
+                <tr>
+                    <td> $join </td>
+                    <td> channelname </td>
+                    <td> $join mecke_dev </td>
+                    <td> Bot joins a new Channel <br> Output: I joined the Channel: mecke_dev </td>
+                </tr>
+                <tr>
+                    <td> $restart </td>
+                    <td> None </td>
+                    <td> $restart </td>
+                    <td> Restarts the Bot <br> Output: I will be back soon </td>
+                </tr>
+
+            </table>
+
+        </div>
+        
+        <div class="commands bg-light rounded p-3 mt-3">
+            
+            <div class="text-center" id="keywords"><h4>-KEYWORDS-</h4></div>
+            <table class="col-12 table table-dark table-striped">
+                <th class="col-1">Keyword</th>
+                <th class="col-3">Parameter</th>
+                <th class="col-3">Example</th>
+                <th class="col-6">Description</th>
+
+                <tr>
+                    <td> -COUNT- </td>
+                    <td> +, -, set, reset, show </td>
+                    <td> This Counter was used -COUNT- times / $test set 120</td>
+                    <td> Returns the Counter with the current Value <br> Output: This Counter was used 120 times</td>
+                </tr>
+
+                <tr>
+                    <td> -VIEWER- </td>
+                    <td> None </td>
+                    <td> I would say -VIEWER- is the best </td>
+                    <td> gets Replaced with a Random Name from the current Viewerlist <br> Output: I would say @chris_live is the best </td>
+                </tr>
+
+                <tr>
+                    <td> -TIME- </td>
+                    <td> None </td>
+                    <td> Only -TIME-25-05-2050-00-00-00- until the World ends.</td>
+                    <td> gets replaced by a countdown until a specific Time <br> Output: Only 28 Years 5 Hours 26 Minutes 43 Seconds until the World ends. </td>
+                </tr>
+
+                <tr>
+                    <td> -RNG- </td>
+                    <td> None </td>
+                    <td> We found -RNG-0-1000- Bugs in the Bot.</td>
+                    <td> gets replaced by a random Number between the given Numbers <br> Output: We found 268 Bugs in the Bot. </td>
+                </tr>                
+
+                <tr>
+                    <td> -ITEM- </td>
+                    <td> itemname <br> (can be multiple Words seperated by _ )</td>
+                    <td> The Streamer needs -ITEM- to create Content. / $test an_Airplane</td>
+                    <td> gets replaced by whaterever the User wants <br> Output: The Streamer needs an Airplane to create Content. </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
